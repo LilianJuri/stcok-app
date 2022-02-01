@@ -1,10 +1,18 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import ProductUpdate from './pages/ProductUpdate';
 
 const App = () => {
     return (
-        <div>
-            <h1>Hola! soy tu app desde el front-end</h1>
-        </div>
+        <React.Fragment>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/products' element={<Products />} />
+                <Route path='/products/:productsID' element={<ProductUpdate />} />
+            </Routes>
+        </React.Fragment>
     )
 }
 
